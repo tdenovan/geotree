@@ -1,0 +1,16 @@
+2013-04-02  
+  * Version 1.0.0  
+
+2013-04-03  
+  * Version 1.1.1
+  * Enhanced README file
+
+  * Version 1.1.2
+  * Moved figures to personal homepage
+
+  * Version 1.1.3
+  * Fixed problem with link URL's
+ 
+  * Version 1.1.4
+  * Placed on github
+
