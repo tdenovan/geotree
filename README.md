@@ -1,10 +1,13 @@
 
 geotree
 =======
-A ruby gem that maintains a set of geographical points, reports points lying within a query rectangle,
+GeoTree is a ruby gem that maintains a set of geographical points, reports points lying within a query rectangle,
 and supports multiple levels of detail.
 
 Written by Jeff Sember, April 2013.
+
+[Source code documentation can be found here.](http://rubydoc.info/gems/geotree/frames)
+
 
 
 GeoTree
