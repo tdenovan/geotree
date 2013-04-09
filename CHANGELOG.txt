@@ -13,4 +13,5 @@
  
   * Version 1.1.4
   * Placed on github
+  * Moved some documentation out of class headers and into README file
 

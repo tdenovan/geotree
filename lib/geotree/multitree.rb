@@ -2,21 +2,8 @@ require_relative 'tools'
 req 'geotree'
 
 module GeoTreeModule
-  
-  # A variant of GeoTree that supports queries at multiple resolutions.
   #
-  # For example, a map application should return approximately the same number of
-  # datapoints when the screen displays the entire state of California, as well as
-  # when it is 'zoomed in' on a particular section of the Los Angeles area.
-  #
-  # To accomplish this, a MultiTree maintains several GeoTrees, each for a different
-  # level of detail.  The highest detail tree contains every datapoint that has been
-  # added to the tree, and lower detail trees will have progressively fewer points.
-  #
-  # When querying a MultiTree, the user must specify which level of detail (i.e.,
-  # which of the contained trees) is to be examined.   
-  #
-  # {An animation of a MultiTree in action.}[link:http://www.cs.ubc.ca/~jpsember/multi_tree.ps]   
+  # See the README file for a description of this class.
   #
   class MultiTree
 

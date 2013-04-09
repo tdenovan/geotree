@@ -3,76 +3,8 @@ require_relative 'node'
 req 'diskblockfile ptbuffer'
 
 module GeoTreeModule
-  #
-  # A variant of a kd-tree, it is capable of maintaining sets of 2D points and efficiently
-  # reporting all points lying within (axis-aligned) query rectangles.
-  #
-  # Like a B+ tree, it has a large branching factor
-  # and the nodes are large to improve performance when the tree is stored
-  # on disk.
-  #
-  # A GeoTree is usually stored within a disk file, though it is also possible to
-  # construct a tree that exists only in memory; see the initialize(...) method.
-  #
-  # {An animation of a GeoTree in action.}[link:http://www.cs.ubc.ca/~jpsember/geo_tree.ps]
-  #
-  # Usage:
-  #
-  # [] Open a tree.  If no tree exists, a new, empty one is created.
-  #
-  #      t = GeoTree.open("treepath.bin")
-  #
-  # [] Add datapoints.
-  #
-  #      dp = DataPoint.new(...)
-  #      t.add(dp)
-  #
-  # [] Remove datapoints.
-  #
-  #      t.remove(dp)
-  #
-  # [] Find all points within a particular rectangle.
-  #
-  #      b = Bounds.new(x,y,width,height)
-  #
-  #      pts = t.find(b)
-  #
-  # [] Close tree; flush any changes.
-  #
-  #      t.close()
-  #
-  #
-  # One of the problems with kd-trees (including this one) is that they can become
-  # unbalanced after a number of insertions and deletions.  To deal with this,
-  # consider these two suggestions:
-  #
-  #  1) When constructing the initial tree, if the datapoints are given in a random
-  #     order, the tree will (with high probability) be constructed in a balanced form.
-  #     By contrast, consider what happens if the points (1,1), (2,2), (3,3), ... are
-  #     added in sequence to an initially empty tree.  The tree will be very unbalanced,
-  #     with poor performance.
-  #     To address this problem, if you are not confident that the points you initially
-  #     provide are in a sufficiently random sequence, you can enable 'point buffering':
-  #
-  #      t = GeoTree.open("treepath.bin")
-  #
-  #      t.buffering = true   # buffering is now active
-  #
-  #      t.add(dp1)
-  #      t.add(dp2)           # these points are stored in a temporary disk file
-  #      t.add(dp3)
-  #         :
-  #
-  #      t.buffering = false  # the points will be shuffled into a random sequence and
-  #                           # added to the tree
-  #
-  #
-  #   2) Periodically, you can start with a new tree, and add all of the datapoints using the
-  #      above buffering technique.  This is easy to do if the datapoints are also stored
-  #      externally to the GeoTree (for instance, as parts of larger records in some database).
-  #      Otherwise, (i) the datapoints can be retrieved from the tree to an array
-  #      (by using a sufficiently large query rectangle), (ii) a new tree can be constructed,
-  #      and (iii) each of the points in the array can be added to the new tree.
+  # 
+  # See the README file for a discussion of this class.
   #
   class GeoTree
 
