@@ -15,3 +15,5 @@
   * Placed on github
   * Moved some documentation out of class headers and into README file
 
+2013-04-15
+  * No longer updating CHANGELOG.txt; consult git commit summaries instead.

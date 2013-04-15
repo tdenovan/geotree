@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name        = 'geotree'
-  s.version     = '1.1.4'
+  s.version     = '1.1.5'
   s.date        = Time.now
   s.summary     = 'Maintains sets of geographical points; reports points lying within a query rectangle; supports multiple levels of detail'
 
