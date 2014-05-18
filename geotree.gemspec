@@ -22,14 +22,7 @@ DESC
   s.authors     = ["Jeff Sember"]
   s.email       = "jpsember@gmail.com"
   s.homepage    = 'http://www.cs.ubc.ca/~jpsember/'
-  fl = FileList['lib/**/*.rb',
-                      'bin/*',
-                      '[A-Z]*',
-                      'test/**/*']
- 	fl.exclude(/^test\/workdir/)
-  
-  s.files = fl.to_a
-  
+  s.files = Dir.glob("{lib}/**/*")
   s.bindir = 'bin'
   s.executables = FileList['bin/*'].map{|x| File.basename(x)}
   s.test_files = Dir.glob('test/*.rb')
