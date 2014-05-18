@@ -1,1 +1,1 @@
-require_relative  'lib/geotree'
+require_relative  'geotree'
