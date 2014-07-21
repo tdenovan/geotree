@@ -24,7 +24,7 @@ module GeoTreeModule
     
     def self.cvt_latlong_to_int(n)
       m = (n / LAT_LONG_FACTOR_ + 0.5).to_i
-      raise ArgumentError,"Converting lat/long #{n} is out of range" if m < LOC_MIN || m > LOC_MAX
+      raise ArgumentError,"Converting lat/long #{n} is out of range #{m}" if m < LOC_MIN || m > LOC_MAX
       m
     end
     
@@ -35,23 +35,11 @@ module GeoTreeModule
     #
     def initialize(x = 0, y = 0)
       if x.is_a? Float
-        x = Loc.cvt_latlong_to_int(x)
-        y = Loc.cvt_latlong_to_int(y)
+        x = x.to_i
+        y = y.to_i
       end          
       @x = x
       @y = y
-    end
-
-    # Get x as a longitudinal coordinate
-    #
-    def longit 
-      @x * LAT_LONG_FACTOR_
-    end
-    
-    # Get y as a latitudinal coordinate
-    #
-    def latit
-      @y * LAT_LONG_FACTOR_
     end
     
     def to_s

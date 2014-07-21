@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name        = 'geotree'
-  s.version     = '1.1.5'
+  s.version     = '1.1.7'
   s.date        = Time.now
   s.summary     = 'Maintains sets of geographical points; reports points lying within a query rectangle; supports multiple levels of detail'
 
@@ -23,9 +23,7 @@ DESC
   s.email       = "jpsember@gmail.com"
   s.homepage    = 'http://www.cs.ubc.ca/~jpsember/'
   s.files = Dir.glob("{lib}/**/*")
-  s.bindir = 'bin'
-  s.executables = FileList['bin/*'].map{|x| File.basename(x)}
-  s.test_files = Dir.glob('test/*.rb')
+  s.require_paths     = ['lib']
   s.license = 'mit'
 end
 

@@ -1,1 +1,1 @@
-require_relative  'geotree'
+require  'geotree/geotree'
